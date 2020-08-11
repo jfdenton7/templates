@@ -12,11 +12,7 @@ def add():
         x = int(request.form['x'])
         y = int(request.form['y'])
         num = lib.add(c_int(x), c_int(y))
-        print(
-            f'x= {x}' \
-            f'y={y}' \
-            f'ans={num}'
-        )
+                
         return jsonify({'answer': num})
     except KeyError as err:
         return jsonify({'err': 'invalid POST, json missing params'})    
